@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdown-menu ul #login{
+    font-weight: bolder;
+    font-size: 16px;
+    background-color: #f8eeec;
+}
+
+.dropdown-menu ul #login a{
+    color: black;
+}
+
+.menu-bar ul li #reach{
+    background-color: #ffffff;
+    color: black;
+    border-radius: 10px;
+}
+
+/* _____________________________________________________RESPONSIVE______________________________________________________________ */
+
+@media only screen and (max-width: 768px) {
+
+    .menu-bar ul #login a{
+        color: #FF5200;
+    }
+    
+    .menu-bar ul #login{
+        background-color: revert;
+    }
+
+    .menu-bar ul li #reach{
+        color: #FF5200;
+        background-color: revert;
+    }
+
+}

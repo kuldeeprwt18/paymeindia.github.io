@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payme-india</title>
+  <link rel="icon" type="image/x-icon" href="images/icon.png" id="icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body>
+
+  {{> header}}
+
+  <div class="main-container">
+    <div class="about">
+      <h1>About Us</h1>
+      <p>Here you will get to know the team members of our company</p>
+      <p>Below are the people who works in our company</p>
+    </div>
+  </div>
+
+
+
+  <div class="wrapper">
+    <h1>Our Team</h1>
+    <div class="our_team">
+      <div class="team_member">
+        <div class="member_img">
+          <img src="https://i.imgur.com/2Necikc.png" alt="our_team">
+          <div class="social_media">
+            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+          </div>
+        </div>
+        <h3>john wright</h3>
+        <span>CEO</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae
+          doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
+      </div>
+      <div class="team_member">
+        <div class="member_img">
+          <img src="https://i.imgur.com/JzUIF4o.png" alt="our_team">
+          <div class="social_media">
+            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+          </div>
+        </div>
+        <h3>barbara mori</h3>
+        <span>Accountant</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae
+          doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
+      </div>
+      <div class="team_member">
+        <div class="member_img">
+          <img src="https://i.imgur.com/Ctwf8HA.png" alt="our_team">
+          <div class="social_media">
+            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+          </div>
+        </div>
+        <h3>harry dickens</h3>
+        <span>Product Manager</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae
+          doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
+      </div>
+      <div class="team_member">
+        <div class="member_img">
+          <img src="https://i.imgur.com/A1Fjq0d.png" alt="our_team">
+          <div class="social_media">
+            <div class="facebook item"><i class="fab fa-facebook-f"></i></div>
+            <div class="twitter item"><i class="fab fa-twitter"></i></div>
+            <div class="instagram item"><i class="fab fa-instagram"></i></div>
+          </div>
+        </div>
+        <h3>sammy louise</h3>
+        <span>product analyst</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae
+          doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
+      </div>
+    </div>
+  </div>
+
+  {{> footer}}
+
+
+
+
+  <script>
+
+
+
+    const signupPop = document.getElementsByClassName("SignUpModal")[0];
+
+    window.addEventListener("load", function () {
+
+      showPopup();
+
+    })
+
+    function showPopup() {
+      const timeLimit = 5 // seconds;
+      let i = 0;
+      const timer = setInterval(function () {
+        i++;
+        if (i == timeLimit) {
+          clearInterval(timer);
+          signupPop.style.display = "block";
+        }
+        console.log(i)
+      }, 1000);
+    }
+
+
+
+  </script>
+
+
+</body>
+
+</html>

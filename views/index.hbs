@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="images/icon.png" id="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <title>Payme-india</title>
+</head>
+
+<body>
+    {{> header}}
+
+    <div id="main-slider">
+        <img src="images/main.jpg" alt="" id="main-id" class="maincls">
+    </div>
+
+    <div id="cards-heading">
+        <p>Bringing you the <b>Best Products</b> from <b>Top Banks & Financial Institutions</b></p>
+    </div>
+
+    <div id="cards-id" class="cards-cls">
+
+        <div class="main-cards"><i class="fa-sharp fa-solid fa-money-bills fa-4x"></i>
+            <p>PERSONAL LOAN</p>
+        </div>
+        <div class="main-cards"><i class="fa-sharp fa-solid fa-house fa-4x"></i></i>
+            <p>HOME LOAN</p>
+        </div>
+        <div class="main-cards"><i class="fa-sharp fa-solid fa-credit-card fa-4x"></i>
+            <p>CREDIT CARD</p>
+        </div>
+        <div class="main-cards"><i class="fa-sharp fa-solid fa-gauge-high fa-4x"></i>
+            <p>CIBIL SCORE</p>
+        </div>
+        <div class="main-cards"><i class="fa-sharp fa-solid fa-hand-holding-dollar fa-4x"></i>
+            <p>GOLD LOAN</p>
+        </div>
+        <div class="main-cards"><i class="fa-sharp fa-solid fa-building fa-4x"></i>
+            <p>BUSINESS LOAN</p>
+        </div>
+    </div>
+
+    <div id="main-cards-container">
+
+        <h3>Why Payme-india?</h3>
+        <h1>Simple & Easy to use</h1>
+
+        <div id="cards-container">
+            <div class="cards">
+                <div class="cards-div"><img src="images/cardone.webp" alt="" srcset="">
+                    <h3>All options at one place</h3>
+                </div>
+                <div class="cards-p first-p">We bring all financing options at one place if anyone can get you money,
+                    it's Payme-india.</div>
+            </div>
+
+            <div class="cards">
+                <div class="cards-div"><img src="images/cardstwo.webp" alt="">
+                    <h3>One Application for all</h3>
+                </div>
+                <div class="cards-p second-p">Payme-india's digitalized platform allows you to apply for multiple
+                    banks/NBFCs through one application which in turn saves time and effort.</div>
+            </div>
+
+            <div class="cards">
+                <div class="cards-div"><img src="images/cardsthree.webp" alt="">
+                    <h3>Best & Fast Deal</h3>
+                </div>
+                <div class="cards-p third-p">Payme-india provides real time updates to customers about best offers
+                    currently available in the market.</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="emi-calculator-box">
+        <div class="wrapper">
+
+            <h2>Calculate Your EMI</h2>
+
+            <span class="div-bar"></span>
+
+            <div class="calculator">
+                <div class="calculator-input">
+                    <label for="">Loan Amount (Rs.):</label>
+                    <input type="number" id="loan-amount" onkeypress="return inputNumber(event)">
+                </div>
+
+                <div class="calculator-input">
+                    <label for="">Loan Tenure (Year.):</label>
+                    <input type="number" id="loan-tenure" onkeypress="return inputNumber(event)">
+                </div>
+
+                <div class="calculator-input">
+                    <label for="">Interest Rate (%):</label>
+                    <input type="number" id="loan-interest" onkeypress="return inputNumber(event)">
+                </div>
+
+                <div class="calculator-input">
+                    <button class="calculator-btn">Calculate EMI</button>
+                </div>
+            </div>
+
+
+            <div class="calculator-result">
+                {{!-- Canvas --}}
+                <canvas id="loanChart"></canvas>
+
+                <ul>
+                    <li>Monthly Loan EMI: <span class="loan-emi"></span></li>
+                    <li>Principle Amount: <span class="loan-Principle"></span></li>
+                    <li>Loan on Interest: <span class="loan-Interest-rate"></span></li>
+                    <li>Total Amount to be Paid: <span class="loan-total"></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="loan-calculator-img">
+            <img src="images/convertor.png" alt="" srcset="">
+        </div>
+
+    </div>
+
+
+    <div id="download-app-container">
+        <p id="download-app-h2">Download Our <b>APP:</b></p>
+        <div id="google-play"> <img src="images/googleplay.jpg" alt="" srcset=""> </div>
+        <div id="apple-store"> <img src="images/appstore.jpg" alt="" srcset=""> </div>
+
+    </div>
+
+
+    <div id="happy-customers-container">
+
+        <h2>Millions of Happy Customers!</h2>
+        <p id="main-p">We achieve such numbers, because you are more than a number to us.</p>
+
+        <div id="happy-customers-2">
+            <div class="happy-customers-3">
+                <h4>500+</h4>
+                <p>Satisfied Customers</p>
+            </div>
+            <div class="happy-customers-3">
+                <h4>21</h4>
+                <p>Number Of Banks That Bank On Us</p>
+            </div>
+            <div class="happy-customers-3">
+                <h4>1+ Cr.</h4>
+                <p>Worth Of Credit Disbursed</p>
+            </div>
+
+        </div>
+
+
+        <marquee behavior="scroll" direction="left" scrollamount="3">
+            <img src="images/axis.png" width="120" height="38" alt="Natural" />
+            <img src="images/bajaj.png" width="120" height="38" alt="Natural" />
+            <img src="images/hdfc.png" width="120" height="38" alt="Natural" />
+            <img src="images/hdfcred.png" width="120" height="38" alt="Natural" />
+            <img src="images/idfc.png" width="120" height="38" alt="Natural" />
+            <img src="images/indusind.png" width="120" height="38" alt="Natural" />
+            <img src="images/tata.png" width="120" height="38" alt="Natural" />
+            <img src="images/yes.png" width="120" height="38" alt="Natural" />
+        </marquee>
+
+    </div>
+
+    <div class="phone-heading">
+
+        <h2>All in one <span>Finance Application</span></h2>
+
+        <img src="images/phone.png" alt="" class="for-phone">
+
+        <p>Payme-india aspires to make personal money decisions in India simple, transparent, and practical. We aim to
+            make
+            complex decisions simple for you through technological and data advancements, as well as a lot of market
+            research.</p>
+
+    </div>
+
+    <div class="phone-app-img">
+
+        <div class="qr-code">
+
+            <h4>Download our New App</h4>
+            <div class="img-container">
+                <img src="images/qr.png" alt="" id="qr-img">
+                <img src="images/gp.webp" alt="" id="gp-img">
+            </div>
+        </div>
+
+        <img src="images/phone.png" alt="" class="phone-img">
+
+    </div>
+
+
+    <div class="steps-image-container">
+        <p>Follow our</p>
+        <h2>Simple Process</h2>
+        <img src="images/steps.webp" alt="">
+    </div>
+
+    <div class="steps-image-container-phone">
+        <p>Follow our</p>
+        <h2>Simple Process</h2>
+        <img src="images/stpsphone.webp" alt="">
+    </div>
+
+
+    <div class="owl-top">
+        <h2>Payme-india's Success Stories</h2>
+
+        <div class="owl-btn-container">
+
+            <button class="previous round customPreviousBtn">&#8249;</button>
+            <button class="next round customNextBtn">&#8250;</button>
+
+        </div>
+    </div>
+
+
+    <div class="slider owl-carousel">
+
+        <div class="card">
+
+            <div class="content">
+                <div class="title">
+                    Amit patel</div>
+                <div class="sub-title">5/1/2022</div>
+
+                <div class="content-img">
+                    <img src="images/5-star.png" alt="">
+                </div>
+                <p>I had taken my personal loan from Tata Capital and executive Nitu Chauhan supported her best
+                    throughout the process. The Approval was very quick and provided a loan with a good rate of
+                    interest. I am very happy with the service Nitu Chauhan provided throughout the loan process. Much
+                    glad to share my experience here. Nice service. Indeed, I will refer it to my friends and relatives.
+                    Once again thanks to Nitu for her patience and for guiding me in getting the loan for my needs.</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="content">
+                <div class="title">
+                    Pankaj kumar</div>
+                <div class="sub-title">10/9/2022</div>
+
+                <div class="content-img">
+                    <img src="images/5-star.png" alt="">
+                </div>
+
+                <p>It helps me a lot to manage my credit portfolios in the right direction. This is an excellent app
+                    that can be accessed with ease and is helpful even for a novice user to learn and manage his
+                    personal credit portfolios. Thanks, Payme-Insia.</p>
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="content">
+                <div class="title">
+                    ankita yadav</div>
+                <div class="sub-title">1/11/2022</div>
+
+                <div class="content-img">
+                    <img src="images/5-star.png" alt="">
+                </div>
+
+                <p>My friend referred Payme-india to me for a free CIBIL check. Usually, I don't trust random apps. But
+                    Payme-india is such a nice and reliable app to check your CIBIL. Results are accurate and the app is
+                    easy to use. I will recommend this to everyone for a free cibil check.</p>
+
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="content">
+                <div class="title">
+                    anshu dhingra</div>
+                <div class="sub-title">1/3/2023</div>
+
+                <div class="content-img">
+                    <img src="images/5-star.png" alt="">
+                </div>
+
+                <p>Hi everyone yesterday I got a call from Sapna Motwani from Jaipur team who explained to me about
+                    Standard Chartered Bank Credit card. she was very good with the explanation about the product and I
+                    accepted the offer she gave me and my card was ready in no time, it got approved in just 3 calls of
+                    10mins and my virtual card was ready with a great credit limit I am very pleased with the experience
+                    with Sapna. It was of great help to me and hope that she keeps doing a great job like this in the
+                    future also thanks for helping me in every step of the approval process. Thanks a lot, Sapna
+                    Motwani.</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="phone-btn-container">
+
+        <button class="previous round customPreviousBtn">&#8249;</button>
+        <button class="next round customNextBtn">&#8250;</button>
+
+    </div>
+
+    <div class="cibil-main-container">
+        <div class="cibil-img">
+            <img src="images/cibilleft.png" alt="">
+
+            <div class="cibil-second">
+                <h2>Free <span>CIBIL Score</span> Check,</h2>
+                <h2><b>Credit Card Rewards & Loans</b></h2>
+                <div class="cibil-second-inside">
+                    <p>Upgrade to Wishfin CIBIL App on</p>
+                    <div class="cibil-second-img">
+                        <img src="images/googleplay.jpg" alt="">
+                        <img src="images/appstore.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <img src="images/cibilright.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="cibil-phone-container">
+
+        <div class="cibil-second">
+            <h2>Free <span>CIBIL Score</span> Check,</h2>
+            <h2><b>Credit Card Rewards & Loans</b></h2>
+            <div class="cibil-second-inside">
+                <p>Upgrade to Wishfin CIBIL App on</p>
+                <div class="cibil-second-img">
+                    <img src="images/googleplay.jpg" alt="">
+                    <img src="images/appstore.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="cibil-img">
+            <img src="images/cibilcenter.png" alt="">
+        </div>
+
+    </div>
+
+    {{!-- _______________________________SLIDER__________________________ --}}
+
+    {{> footer}}
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

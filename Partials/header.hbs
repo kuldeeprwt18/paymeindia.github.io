@@ -1,0 +1,228 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<link rel="stylesheet" href="css/header.css" />
+
+<div class="menu-bar">
+    <img src="images/logo.png" alt="logo" class="logo">
+    <ul class="nav-menu active">
+        <li><a href="/" id="home">Home</a></li>
+        <li><a href="/about" id="about">About</a></li>
+        <li><a href="/services" id="services">Our Services</a></li>
+
+        <li><a href="#" id="reach">Reach Us <i class="fas fa-caret-down"></i></a>
+
+            <div class="dropdown-menu">
+                <ul>
+                    <li class="nav-item" id="contact"><a href="/contact" class="drop">Contact Us</a></li>
+                    <li class="nav-item" id="login"><a href="#" class="drop">Submit Query</a></li>
+                    <li class="nav-item" id="signup"><a href="#" class="drop">Sign Up</a></li>
+                </ul>
+
+            </div>
+        </li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <center>
+            <h1> Login for Submit Query </h1>
+        </center>
+        <form action="/query" method="POST">
+            <div class="container">
+                <input type="text" placeholder="Enter Username" name="username" id="email" required>
+
+                <span class="show-pwd"><input type="password" placeholder="Enter Password" name="userpassword"
+                        class="pwd" required id="login_password"><i class="fa-solid fa-eye-slash" id="color3"
+                        onclick="showLoginPassword()"></i></span>
+
+                <button class="login-signup-btn" type="submit" onclick="lsRememberMe()">Login</button>
+
+                <input type="checkbox" id="rememberMe">
+                <div class="size Remember-inline">Remember me</div>
+                <div class="Forgot-password size">Forgot <a href="#"> password? </a></div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<div id="mySignUpModal" class="SignUpModal">
+
+    <!-- Modal content -->
+    <div class="SignUpModal-content">
+        <span class="SignUpModal-close">&times;</span>
+        <div class="signup-center">
+            <h1>Sign Up</h1>
+        </div>
+        <form action="/signup" method="POST" class="SignUp-container">
+
+            <input type="text" placeholder="First Name" name="firstname" required>
+
+
+            <input type="text" placeholder="Last Name" name="lastname" required>
+
+
+            <input type="email" placeholder="Email" name="email" required>
+
+
+            <input type="number" placeholder="Contact Number" name="contact" required>
+
+
+            <span class="show-pwd"><input type="password" placeholder="Enter Password" name="password" minlength="8"
+                    required id="id_password"><i class="fa-solid fa-eye-slash" id="color2"
+                    onclick="showPassword()"></i></span>
+
+
+            <span class="show-pwd"><input type="password" placeholder="confirm Password" name="confirmpassword"
+                    minlength="8" required id="id_confirmpassword"><i class="fa-solid fa-eye-slash" id="color"
+                    onclick="showConfirmPassword()"></i></span>
+
+
+            <button class="login-signup-btn" type="submit" class="signup-btn" value="SignUp">Sign Up</button>
+        </form>
+    </div>
+
+</div>
+
+
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var login = document.getElementById("login");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    //When the user clicks the button, open the modal 
+    login.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+
+        if (event.target == mySignUpModal) {
+            mySignUpModal.style.display = "none";
+        }
+    }
+
+
+
+    // Get the SignUp modal
+    var mySignUpModal = document.getElementById("mySignUpModal");
+
+    // Get the button that opens the modal
+    var signup = document.getElementById("signup");
+
+    // Get the <span> element that closes the modal
+    var closeSignUp = document.getElementsByClassName("SignUpModal-close")[0];
+
+    //When the user clicks the button, open the modal 
+    signup.onclick = function () {
+        mySignUpModal.style.display = "block";
+    }
+
+    closeSignUp.onclick = function () {
+        mySignUpModal.style.display = "none";
+    }
+
+    function showPassword() {
+        var x = document.getElementById("id_password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+
+        var color = document.getElementById("color2");
+        color.classList.toggle("newclr");
+    }
+
+    function showConfirmPassword() {
+        var y = document.getElementById("id_confirmpassword");
+
+        if (y.type === "password") {
+            y.type = "text";
+        } else {
+            y.type = "password";
+        }
+
+        var color = document.getElementById("color");
+        color.classList.toggle("newclr");
+    }
+
+    function showLoginPassword() {
+        var z = document.getElementById("login_password");
+        if (z.type === "password") {
+            z.type = "text";
+        } else {
+            z.type = "password";
+        }
+
+        var color = document.getElementById("color3");
+        color.classList.toggle("newclr");
+    }
+
+
+
+    const rmCheck = document.getElementById("rememberMe"),
+        emailInput = document.getElementById("email"),
+        pwdInput = document.getElementsByClassName("pwd")[0];
+
+    if (localStorage.checkbox && localStorage.checkbox !== "") {
+        rmCheck.setAttribute("checked", "checked");
+        emailInput.value = localStorage.username;
+        pwdInput.value = localStorage.password;
+    } else {
+        rmCheck.removeAttribute("checked");
+        emailInput.value = "";
+        pwdInput.value = "";
+    }
+
+    function lsRememberMe() {
+        if (rmCheck.checked && emailInput.value !== "") {
+            localStorage.username = emailInput.value;
+            localStorage.password = pwdInput.value;
+            localStorage.checkbox = rmCheck.value;
+        } else {
+            localStorage.username = "";
+            localStorage.password = "";
+            localStorage.checkbox = "";
+        }
+    }
+
+
+
+</script>

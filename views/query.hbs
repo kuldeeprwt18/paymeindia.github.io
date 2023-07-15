@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/query.css">
+    <link rel="icon" type="image/x-icon" href="images/icon.png" id="icon">
+    <title>Payme-india</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .form-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+    }
+
+    #selected {
+        background: rgb(226, 224, 224);
+        text-align: center;
+    }
+
+    .opt {
+        text-align: center;
+    }
+
+    #query-form {
+        border-radius: 10px;
+        padding: 50px;
+        padding-top: 20px;
+        width: 45%;
+        box-shadow: 0px 0px 24px rgb(0 0 0 / 20%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-span {
+        margin: 20px 0;
+    }
+
+    #query-form h1 {
+        font-weight: 500;
+        border-bottom: 1px solid #4CAF50;
+    }
+
+    #textbox {
+        padding: 5px;
+    }
+
+    #concern {
+        width: 30%;
+    }
+
+    #sbmt {
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .form-main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        #query-form {
+            border-radius: 10px;
+            padding: 20px;
+            padding-top: 20px;
+            width: 80%;
+            box-shadow: 0px 0px 24px rgb(0 0 0 / 20%);
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+
+        .form-span {
+            margin: 20px 0;
+        }
+
+        #query-form h1 {
+            font-weight: 500;
+            border-bottom: 1px solid #4CAF50;
+            font-size: x-large;
+        }
+
+        #textbox {
+            padding: 5px;
+        }
+
+        #concern {
+            width: 25%;
+        }
+
+        #sbmt {
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+    }
+
+    #upl-container {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin-top: 25px;
+        margin-bottom: 5px;
+    }
+
+    #upl-container span{
+        color: gray;
+        font-size: 12px;
+    }
+
+    #fileupl{
+        margin: 6px 0;
+    }
+
+</style>
+
+<body>
+
+    {{> header}}
+
+
+    <div class="form-main">
+        <form action="/sucessfully" method="post" enctype="multipart/form-data" id="query-form">
+
+            <h1>
+                Submit Your Query Here
+            </h1>
+
+            <span class="form-span">
+                <label for="concern">Select Your Concern:</label>
+                <select name="concern" id="concern" required>
+                    <option value="none" id="selected" selected>select</option>
+                    <option value="1" class="opt">1</option>
+                    <option value="2" class="opt">2</option>
+                    <option value="3" class="opt">3</option>
+                    <option value="4" class="opt">4</option>
+                </select>
+            </span>
+
+            <textarea name="textbox" id="textbox" cols="30" rows="10" placeholder="Type Here!"></textarea>
+
+            <div id="upl-container">
+                <label for="fileupl">Share Image for Reference <span>(Optional)</span> </label>
+                <input type="file" multiple='multiple' name="fileupl" id="fileupl">
+            </div>
+
+            <button type="submit" id="sbmt" value="submit">Submit</button>
+        </form>
+    </div>
+
+
+    {{> footer}}
+</body>
+
+</html>
